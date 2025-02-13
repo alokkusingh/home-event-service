@@ -1,0 +1,12 @@
+id:123
+data:{"eventType":"REFRESH_EVENT","eventData":"My first event"}
+event:REFRESH_EVENT
+
+id:123
+data:{"eventType":"REFRESH_EVENT","eventData":"My first event"}
+event:REFRESH_EVENT
+
+id:123
+data:{"eventType":"REFRESH_EVENT","eventData":"My first event"}
+event:REFRESH_EVENT
+

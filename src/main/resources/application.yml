@@ -1,0 +1,35 @@
+application:
+    id: home-stack-event
+spring:
+    application:
+        name: home-event-service
+    profiles:
+        active: local
+    lifecycle:
+        timeout-per-shutdown-phase: 1m
+server:
+    servlet:
+        context-path: /home/event
+    compression:
+        enabled: true
+        min-response-size: 2KB
+    shutdown: graceful
+
+web:
+    cache-control:
+        max-age: 30
+management:
+      endpoint:
+          health:
+              probes:
+                  enabled: true
+              show-details: always
+      endpoints:
+          web:
+              exposure:
+                  include: '*'
+      health:
+          livenessState:
+              enabled: true
+          readinessState:
+              enabled: true
