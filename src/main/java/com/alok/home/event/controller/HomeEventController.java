@@ -2,6 +2,7 @@ package com.alok.home.event.controller;
 
 import com.alok.home.event.dto.EventDto;
 import com.alok.home.event.service.HomeEventService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +18,9 @@ public class HomeEventController {
     }
 
     @GetMapping(value = "/{eventId}/subscribe", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public SseEmitter subscribeForEvent(@PathVariable String eventId) {
+    public SseEmitter subscribeForEvent(@PathVariable String eventId, HttpServletResponse response) {
 
+        response.setHeader("Target-Event", eventId);
         return homeEventService.subscribeForEvent(eventId);
     }
 

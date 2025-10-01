@@ -8,6 +8,11 @@ java -jar target/home-event-service-1.0.0.jar
 ````
 
 #### Build
+#### Set JAVA_HOME (in case mvn run through terminal)
+```shell
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+```
 1. Maven Package
    ```shell
    mvn clean package -DskipTests
